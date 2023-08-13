@@ -1,0 +1,24 @@
+@charset 'UTF-8';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+image,
+video,
+picture,
+svg {
+  width: 100%;
+  display: block;
+}
+html {
+  font-size: 1rem;
+  color-scheme: dark light;
+}
+body {
+  min-height: 100vh;
+}

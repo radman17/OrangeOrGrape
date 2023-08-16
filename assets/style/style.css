@@ -1,5 +1,12 @@
 @charset 'UTF-8';
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/* VARIABLES */
+:root {
+  --orange-color: rgb(220, 123, 38);
+  --grape-color: rgb(81, 16, 179);
+}
 
+/* RESET */
 *,
 *::before,
 *::after {
@@ -20,5 +27,182 @@ html {
   color-scheme: dark light;
 }
 body {
+  font-family: "Press Start 2P", cursive;
   min-height: 100vh;
+}
+
+/*GENEREAL*/
+.hidden {
+  display: none !important;
+}
+
+/* LAYOUT */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-to-play {
+  position: absolute;
+  bottom: 3%;
+  left: 1%;
+  background-color: #121212;
+  border: none;
+  padding: 1rem;
+}
+.how-to-play:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.overlay {
+  position: absolute;
+  background-color: #2222228f;
+  backdrop-filter: blur(0.2rem);
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+.guide-modal {
+  display: flex;
+  flex-direction: column;
+  line-height: 3rem;
+  background-color: #222;
+  position: absolute;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.375);
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.modal-dismiss {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  height: 2rem;
+  align-self: flex-end;
+  padding-right: 0.5rem;
+}
+.modal-dismiss:hover {
+  cursor: pointer;
+}
+
+.OrangeOrGrapeQuestion {
+  margin: auto;
+  display: flex;
+}
+.OrangeOrGrapeQuestion h2 {
+  margin: 1rem;
+  font-size: 3rem;
+}
+.OrangeOrGrapeQuestion button {
+  margin: 1rem;
+  font-size: 2rem;
+  border: none;
+  padding: 0.8rem;
+}
+.OrangeOrGrapeQuestion button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.orange-option {
+  background-color: var(--orange-color);
+}
+.grape-option {
+  background-color: var(--grape-color);
+}
+
+.glasses-pitchers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.glasses {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-self: stretch;
+}
+section[class$="glass"] {
+  display: flex;
+  flex-grow: 1;
+  height: 35rem;
+  background-color: rgb(69, 69, 69);
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+section[class$="glass"]:hover {
+  cursor: pointer;
+  background-color: rgba(69, 69, 69, 0.829);
+}
+section[class$="glass"] .left-image-glass,
+section[class$="glass"] .right-image-glass {
+  width: 25rem;
+}
+.btn {
+  align-self: flex-start;
+  padding: 1rem;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%);
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.btn.new-game {
+  top: 5%;
+}
+.btn.refill-glasses {
+  top: 15%;
+}
+.deactive section[class$="glass"] {
+  background-color: rgb(69, 69, 69);
+  opacity: 0.2;
+}
+.deactive .btn.refill-glasses {
+  display: none;
+}
+.deactive section[class$="glass"]:hover {
+  cursor: context-menu;
+}
+
+[class$="message"] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 2rem;
+}
+
+.pitchers {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 20rem;
+  width: 50rem;
+  gap: 1rem;
+  padding: 1rem;
+}
+section[class$="pitcher"] {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 2rem;
+  flex-grow: 1;
+}
+section[class$="pitcher"] [class$="pitcher"] {
+  width: 12rem;
+}
+.pither-information {
+  font-size: 1.2rem;
+  color: white;
 }

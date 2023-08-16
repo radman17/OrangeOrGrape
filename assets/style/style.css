@@ -44,53 +44,6 @@ body {
 }
 
 /* ------------------- */
-.how-to-play {
-  position: fixed;
-  z-index: 2;
-  bottom: 2%;
-  left: 1%;
-  background-color: #222;
-  border: none;
-  padding: 1rem;
-}
-.how-to-play:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.overlay {
-  position: fixed;
-  background-color: #2222228f;
-  backdrop-filter: blur(0.2rem);
-  width: 100%;
-  height: 100vh;
-  z-index: 3;
-}
-.guide-modal {
-  display: flex;
-  flex-direction: column;
-  line-height: 3rem;
-  background-color: #222;
-  position: absolute;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.375);
-  padding: 1rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.modal-dismiss {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  height: 2rem;
-  align-self: flex-end;
-  padding-right: 0.5rem;
-}
-.modal-dismiss:hover {
-  cursor: pointer;
-}
-/* ------------------- */
-
-/* ------------------- */
 .OrangeOrGrapeQuestion {
   margin: auto;
   display: flex;

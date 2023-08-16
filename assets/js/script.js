@@ -22,10 +22,7 @@ const btnNewGame = document.querySelector('.new-game');
 const btnRefillEl = document.querySelector('.refill-glasses');
 const winMessageEl = document.querySelector('.win-message');
 const lostMessageEl = document.querySelector('.lost-message');
-const btnHowToPlayEl = document.querySelector('.how-to-play');
-const overlayEl = document.querySelector('.overlay');
-const guideModalEl = document.querySelector('.guide-modal');
-const modalDisEl = document.querySelector('.modal-dismiss');
+
 
 let likedFruit = null;
 let foundout;
@@ -94,20 +91,6 @@ const fillPithers = function (glassContent) {
 
 init();
 
-btnHowToPlayEl.addEventListener('click', function () {
-    overlayEl.classList.remove('hidden');
-})
-overlayEl.addEventListener('click', function () {
-    overlayEl.classList.add('hidden');
-})
-modalDisEl.addEventListener('click', function () {
-    overlayEl.classList.add('hidden');
-})
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-        overlayEl.classList.add('hidden');
-    }
-})
 
 orangeOptionEl.addEventListener('click', function () {
     likedFruit = 0;

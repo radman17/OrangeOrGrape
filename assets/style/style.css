@@ -43,11 +43,13 @@ body {
   align-items: center;
 }
 
+/* ------------------- */
 .how-to-play {
-  position: absolute;
-  bottom: 3%;
+  position: fixed;
+  z-index: 2;
+  bottom: 2%;
   left: 1%;
-  background-color: #121212;
+  background-color: #222;
   border: none;
   padding: 1rem;
 }
@@ -56,12 +58,12 @@ body {
   text-decoration: underline;
 }
 .overlay {
-  position: absolute;
+  position: fixed;
   background-color: #2222228f;
   backdrop-filter: blur(0.2rem);
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
 }
 .guide-modal {
   display: flex;
@@ -74,7 +76,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
 }
 .modal-dismiss {
   display: flex;
@@ -87,20 +88,24 @@ body {
 .modal-dismiss:hover {
   cursor: pointer;
 }
+/* ------------------- */
 
+/* ------------------- */
 .OrangeOrGrapeQuestion {
   margin: auto;
   display: flex;
+  align-items: center;
 }
 .OrangeOrGrapeQuestion h2 {
   margin: 1rem;
-  font-size: 3rem;
+  font-size: clamp(1.6rem, 2vw, 3rem);
 }
 .OrangeOrGrapeQuestion button {
   margin: 1rem;
-  font-size: 2rem;
+  width: 12rem;
+  font-size: 1.2rem;
   border: none;
-  padding: 0.8rem;
+  padding: 1rem;
 }
 .OrangeOrGrapeQuestion button:hover {
   cursor: pointer;
@@ -112,6 +117,12 @@ body {
 .grape-option {
   background-color: var(--grape-color);
 }
+@media screen and (max-width: 65em) {
+  .OrangeOrGrapeQuestion {
+    flex-direction: column;
+  }
+}
+/* ------------------- */
 
 .glasses-pitchers {
   display: flex;
@@ -121,9 +132,12 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+/* ------------------- */
 .glasses {
   display: flex;
   gap: 1rem;
+
   padding: 1rem;
   align-self: stretch;
 }
@@ -144,23 +158,22 @@ section[class$="glass"] .left-image-glass,
 section[class$="glass"] .right-image-glass {
   width: 25rem;
 }
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
 .btn {
+  flex-grow: 1;
+  width: 100%;
   align-self: flex-start;
   padding: 1rem;
-  position: absolute;
   z-index: 1;
-  left: 50%;
-  transform: translate(-50%);
 }
 .btn:hover {
   cursor: pointer;
   opacity: 0.9;
-}
-.btn.new-game {
-  top: 5%;
-}
-.btn.refill-glasses {
-  top: 15%;
 }
 .deactive section[class$="glass"] {
   background-color: rgb(69, 69, 69);
@@ -172,23 +185,42 @@ section[class$="glass"] .right-image-glass {
 .deactive section[class$="glass"]:hover {
   cursor: context-menu;
 }
+@media screen and (max-width: 68em) {
+  .glasses {
+    flex-direction: column;
+  }
+  .left-glass {
+    order: 0;
+  }
+  .btn-container {
+    order: 2;
+  }
+  .right-glass {
+    order: 1;
+  }
+}
+/* ------------------- */
 
+/* ------------------- */
 [class$="message"] {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0%, -50%);
   z-index: 2;
-  font-size: 2rem;
+  gap: 2rem;
+  width: 100%;
+  font-size: clamp(1.2rem, 2vw, 4rem);
+  text-align: center;
+  padding: 2rem;
 }
+/* ------------------- */
 
 .pitchers {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  height: 20rem;
-  width: 50rem;
-  gap: 1rem;
+
+  gap: 4rem;
   padding: 1rem;
 }
 section[class$="pitcher"] {
@@ -205,4 +237,9 @@ section[class$="pitcher"] [class$="pitcher"] {
 .pither-information {
   font-size: 1.2rem;
   color: white;
+}
+@media screen and (max-width: 45em) {
+  .pitchers {
+    flex-direction: column;
+  }
 }
